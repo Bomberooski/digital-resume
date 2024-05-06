@@ -1,113 +1,74 @@
 import Image from "next/image";
+import DescriptionMap from "./components/DescriptionMap";
+import Link from "next/link";
+
+function SectionHeaderText(props){
+  const {children} = props
+  return (
+    <h4 className="pb-5 text-xl font-semibold">{children}</h4>
+  )
+}
 
 export default function Home() {
+
+  const links = [
+    {name: 'Email', link: 'mailto:seantwidmer@gmail.com', content: 'seantwidmer@gmail.com'},
+    {name: 'GitHub', link: 'https://github.com/Bomberooski', content: 'seangithub'},
+    {name: 'LinkedIn', link: 'https://www.linkedin.com/in/sean-widmer-98113730/', content: 'seanlinkedin'},
+    {name: 'Podcast', link: 'https://www.seanslife.com/podcast', content: 'seanpodcast'}
+  ]
+
+   const skills = [
+    {name: 'JavaSript', content: ['React', 'React Native', 'SvelteKit', 'Node.js']},
+    {name: 'Python', content: ['Data Analysis', 'Django', 'Flask', 'Data Visualization']},
+    {name: 'Web', content: ['Sass','TailwindCSS', 'Firebase', 'NoSQL', 'SQL', 'Netlify', 'AWS', 'GCP', 'DOCKER', 'Kubernetes']},
+    {name: 'Design', content: ['Canvas', 'Pixlr', 'Figma']}
+   ]
+
+   const workHistory = [
+    {name: 'On Air Host + Producer of \'The Jay and Kevin Show\' (2009-2023)', content: 'Co-hosted and produced a top rated morning show weekday mornings 6-10am on KXLY-fm'},
+    {name: 'Host of \'Spokane\'s Sports Show\' (2005-2009)', content: 'Hosted and produced a sports radio show weekday afternoons 3-6pm on KGA and KJRB'},
+    {name: 'Host of \'The Dickau and Slim Show\' (2014-2016)', content: 'Hosted a sports radio show with Dan Dickau weekday afternoons 1-3pm on KXLX-700 ESPN'},
+    {name: 'Music Director KXLY-FM (2022-2023)', content: 'Scheduled music, promotions, concerts and giveaways for The Big 99.9 Coyote Country in Spokane, WA.'}      
+   ]
+
+   const hobbies = [
+    {name: 'Podcasting', content: 'Have hosted or been a part of numerous podcasts including \'The Sean Widmer Podcast\' since 2005.'},
+    {name: 'Basketball', content: 'Coached basketball at \'Northwest Basketball Camp\' from 2001 to 2005 and currently still play at least once a week.'},
+    {name: 'Board Game Enthusiast', content: 'I have a love for playing and creating any kind of table top board game.'},
+    {name: 'Video Game Creation', content: 'Working on creating a video game app for cell phones.'}
+
+   ]
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+    <main className="flex flex-col gap-5 p-4 max-w-[900px] mx-auto w-full">
+      <h2 className="font-bold text-4xl sm:text-5xl md:text-6xl sm:py-4 md:py-8">
+        Digital Résumé
+      </h2>
+      <section>
+        <SectionHeaderText>Sean Widmer - Web Developer and Radio/Podcast Host + Creator</SectionHeaderText>
+        <DescriptionMap list={links} type={"link"} />
+      </section>
+      <section>
+      <SectionHeaderText>Skills</SectionHeaderText>
+        <DescriptionMap list={skills} type={"skills"} />
+      </section>
+      <section>
+        <SectionHeaderText>Projects</SectionHeaderText>
+        <p className="text-xs sm:text-sm">Checkout my latest <Link href={'/projects'} className="text-sky-400">projects</Link></p>
+      </section>
+      <section>
+        <SectionHeaderText>Work History</SectionHeaderText>
+        <DescriptionMap list={workHistory} type={"work"} />
+      </section>
+      <section>
+        <SectionHeaderText>Just For Fun</SectionHeaderText>
+        <DescriptionMap list={hobbies} type={"hobbies"} />
+      </section>
+      <section>
+        
+        <p>Checkout my latest <a>projects</a></p>
+      </section>
     </main>
   );
 }
