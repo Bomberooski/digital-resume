@@ -1,0 +1,27 @@
+import React from 'react'
+
+export default function DescriptionMap(props) {
+
+    const { list , type  } = props
+
+    const contentDisplay = {
+        "link": (obj) => <a className="text-sky-400 cursor-pointer" href={obj.link} target='_blank'>{obj.content}</a>,
+        "skills": (obj) => <p>{obj.content.join(', ')}</p>,
+        "work": (obj) => <p>{obj.content}</p>,
+        "hobbies": (obj) => <p>{obj.content}</p>
+    }
+
+  return (
+    <div className='flex flex-col gap-3'>
+        {list.map((listItem, listIndex) => {
+          return (
+            <div key={listIndex} className='relative group overflow-hidden flex items-center gap-1.5 flex-wrap text-xs sm:text-sm'>
+              <div className='bg-teal-400 duration-300 group-hover:translate-x-full h-[2px] w-full absolute right-full bottom-0  '></div>
+              <p><b>{listItem.name}</b></p>
+              {contentDisplay[type](listItem)}
+            </div>
+          )
+        })}
+    </div>
+  )
+}
