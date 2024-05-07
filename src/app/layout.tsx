@@ -34,7 +34,7 @@ export default function RootLayout({
             <p>|</p>
             <a href={'/projects'} className="cursor-pointer hover:opacity-60 duration-200">Projects</a>
             <p>|</p>
-            <a href="https://www.seanslife.com" target="_blank" className="cursor-pointer hover:opacity-60 duration-200">Sean's Life</a>
+            <a href="https://www.seanslife.com" target="_blank" className="cursor-pointer hover:opacity-60 duration-200">Blog</a>
           </div>
           <div className="flex items-center justify-center gap-4 text-lg sm:text-xl">
             <a className="cursor-pointer hover:opacity-60 duration-200" href="https://github.com/Bomberooski" target="_blank">
