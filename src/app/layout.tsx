@@ -7,7 +7,7 @@ const poppins = Poppins({ weight: ["100", "200", "300", "400", "500", "700", "90
 
 export const metadata: Metadata = {
   title: "STW Digital Résumé",
-  description: "This is my resume and growin developer portfolio",
+  description: "This is my resume and growing developer portfolio",
 };
 
 export default function RootLayout({
