@@ -20,6 +20,9 @@
 // }
 
 
+// ^^ Original code that was unstable because 'props' wasn't properly defined. Worked fine in testing but wouldn't 
+//    deploy properly.
+
 import React from 'react';
 
 interface Project {
