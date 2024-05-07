@@ -9,6 +9,9 @@ import Link from "next/link";
 //   )
 // }
 
+// ^^ This worked okay until I tried to deploy to netlify. At that point the build didn't
+//    like how 'props' was working. So researched a bit and learned about React.ReactNode.
+
 interface SectionHeaderTextProps {
   children: React.ReactNode;
 }
