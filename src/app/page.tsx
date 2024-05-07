@@ -2,11 +2,22 @@ import Image from "next/image";
 import DescriptionMap from "./components/DescriptionMap";
 import Link from "next/link";
 
-function SectionHeaderText(props) {
-  const { children } = props
+// function SectionHeaderText(props) {
+//   const { children } = props
+//   return (
+//     <h4 className="pb-5 text-xl font-semibold">{children}</h4>
+//   )
+// }
+
+interface SectionHeaderTextProps {
+  children: React.ReactNode;
+}
+
+function SectionHeaderText(props: SectionHeaderTextProps) {
+  const { children } = props;
   return (
     <h4 className="pb-5 text-xl font-semibold">{children}</h4>
-  )
+  );
 }
 
 export default function Home() {
