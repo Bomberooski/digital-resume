@@ -34,11 +34,11 @@ import React from 'react';
 
 interface ListItem {
   name: string;
-  content: string | string[]; // Adjust this type according to your data structure
-  link?: string; // Adding the optional link property
+  content: string | string[]; 
+  link?: string; 
 }
 
-type MapType = "link" | "skills" | "work" | "hobbies"; // Adjust this type as per your requirements
+type MapType = "link" | "skills" | "work" | "hobbies"; 
 
 interface DescriptionMapProps {
   list: ListItem[];
