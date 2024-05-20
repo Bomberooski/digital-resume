@@ -33,7 +33,7 @@ export default function Home() {
   ]
 
    const skills = [
-    {name: 'JavaSript', content: ['React', 'React Native', 'SvelteKit', 'Node.js']},
+    {name: 'JavaSript', content: ['React', 'React Native', 'SvelteKit', 'Node.js', 'Qwik']},
     {name: 'Python', content: ['Data Analysis', 'Django', 'Flask', 'Data Visualization']},
     {name: 'Web', content: ['Sass','TailwindCSS', 'Firebase', 'NoSQL', 'SQL', 'Netlify', 'AWS', 'GCP', 'DOCKER', 'Kubernetes']},
     {name: 'Design', content: ['Canvas', 'Pixlr', 'Figma']}
